@@ -129,6 +129,7 @@
             box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .cta-button:hover {
@@ -177,17 +178,41 @@
             padding: 2rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
             border: 1px solid #e2e8f0;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
         }
 
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
         }
 
         .feature-title {
@@ -195,6 +220,168 @@
             font-weight: 600;
             margin-bottom: 1rem;
             color: #2d3748;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .feature-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #64748b;
+            margin-top: 1rem;
+        }
+
+        .feature-card.expanded .feature-details {
+            max-height: 300px;
+        }
+
+        .expand-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .feature-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .feature-progress {
+            background: #f1f5f9;
+            height: 4px;
+            border-radius: 2px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .feature-progress-bar {
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+            transition: width 0.8s ease;
+        }
+
+        .feature-benefits {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .feature-benefits li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card.expanded .feature-benefits li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-benefits li:nth-child(1) { transition-delay: 0.1s; }
+        .feature-benefits li:nth-child(2) { transition-delay: 0.2s; }
+        .feature-benefits li:nth-child(3) { transition-delay: 0.3s; }
+
+        .feature-time {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .calculator-card {
+            background: rgba(255,255,255,0.95);
+            color: #2d3748;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .input-group input {
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .calculator-results {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .result-item:first-child {
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 600;
+        }
+
+        #monthly-savings, #yearly-savings {
+            color: #38a169;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .calculator-cta {
+            width: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .calculator-cta:hover {
+            transform: translateY(-2px);
         }
 
         /* Pricing Section */
@@ -309,6 +496,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
+            transition: all 0.3s ease;
         }
 
         .testimonial-card::before {
@@ -330,6 +518,23 @@
         .testimonial-author {
             font-weight: 600;
             color: #2d3748;
+        }
+
+        .success-stories-btn {
+            display: block;
+            margin: 2rem auto 0;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .success-stories-btn:hover {
+            transform: translateY(-2px);
         }
 
         /* FAQ Section */
@@ -394,6 +599,169 @@
             color: #a0aec0;
         }
 
+        /* Success Modal */
+        #success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+        }
+
+        .modal-overlay {
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .story-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-avatar {
+            font-size: 3rem;
+        }
+
+        .story-info h3 {
+            margin: 0;
+            color: #2d3748;
+        }
+
+        .story-info p {
+            margin: 0;
+            color: #64748b;
+        }
+
+        .story-content h4 {
+            color: #667eea;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-highlight {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #2d3748;
+        }
+
+        .modal-cta {
+            width: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* Progress Indicator */
+        #progress-indicator {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 0;
+            z-index: 999;
+            display: none;
+        }
+
+        .progress-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        /* Floating Button */
+        .floating-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .floating-telegram {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #0088cc, #0099dd);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .floating-telegram:hover {
+            transform: scale(1.1);
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -415,6 +783,10 @@
             .pricing-card.popular {
                 transform: none;
             }
+
+            .calculator-inputs {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Animations */
@@ -433,7 +805,6 @@
             animation: fadeInUp 0.6s ease-out;
         }
 
-        /* Scroll Animations */
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
@@ -482,46 +853,222 @@
         <div class="container">
             <h2 class="section-title scroll-animate">🎯 អ្វីដែលអ្នកនឹងរៀន</h2>
             <div class="program-features">
-                <div class="feature-card scroll-animate">
+                <div class="feature-card" onclick="toggleFeature(this)">
                     <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">ថ្ងៃទី១: ស្គាល់ Money Flow</h3>
+                    <h3 class="feature-title">
+                        ថ្ងៃទី១: ស្គាល់ Money Flow
+                        <span class="expand-icon">▼</span>
+                    </h3>
                     <p>យល់ដឹងពីរបៀបដែលលុយចូល និងចេញពីជីវិតរបស់អ្នក</p>
+                    <div class="feature-progress">
+                        <div class="feature-progress-bar" style="width: 15%"></div>
+                    </div>
+                    <div class="feature-details">
+                        <ul class="feature-benefits">
+                            <li>✅ ស្វែងយល់ពី 4 ប្រភេទចំណូលចម្បង</li>
+                            <li>✅ វិភាគចំណាយតាម 4 ក្រុម</li>
+                            <li>✅ គណនា Money Flow ដោយស្វ័យប្រវត្តិ</li>
+                            <li>✅ ស្គាល់ 50/30/20 Golden Rule</li>
+                            <li>✅ ការវាយតម្លៃ financial health</li>
+                        </ul>
+                        <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
+                    </div>
                 </div>
-                <div class="feature-card scroll-animate">
+
+                <div class="feature-card" onclick="toggleFeature(this)">
                     <div class="feature-icon">🔍</div>
-                    <h3 class="feature-title">ថ្ងៃទី២: រកឃើញ Money Leaks</h3>
+                    <h3 class="feature-title">
+                        ថ្ងៃទី២: រកឃើញ Money Leaks
+                        <span class="expand-icon">▼</span>
+                    </h3>
                     <p>កំណត់អត្តសញ្ញាណកន្លែងដែលលុយរបស់អ្នកលេចទៅដោយមិនដឹងខ្លួន</p>
+                    <div class="feature-progress">
+                        <div class="feature-progress-bar" style="width: 30%"></div>
+                    </div>
+                    <div class="feature-details">
+                        <ul class="feature-benefits">
+                            <li>✅ ស្វែងរក 5 ប្រភេទ Money Leaks</li>
+                            <li>✅ Digital subscriptions ដែលមិនប្រើ</li>
+                            <li>✅ Convenience spending ដែលចំណាយច្រើន</li>
+                            <li>✅ 4 Hacks ដើម្បីបិទ Money Leaks</li>
+                            <li>✅ សន្សំបាន $50-200/ខែ</li>
+                        </ul>
+                        <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
+                    </div>
                 </div>
-                <div class="feature-card scroll-animate">
+
+                <div class="feature-card" onclick="toggleFeature(this)">
                     <div class="feature-icon">⚖️</div>
-                    <h3 class="feature-title">ថ្ងៃទី៣: វាយតម្លៃប្រព័ន្ធ</h3>
+                    <h3 class="feature-title">
+                        ថ្ងៃទី៣: វាយតម្លៃប្រព័ន្ធ
+                        <span class="expand-icon">▼</span>
+                    </h3>
                     <p>វាយតម្លៃប្រព័ន្ធគ្រប់គ្រងលុយបច្ចុប្បន្នរបស់អ្នក</p>
+                    <div class="feature-progress">
+                        <div class="feature-progress-bar" style="width: 45%"></div>
+                    </div>
+                    <div class="feature-details">
+                        <ul class="feature-benefits">
+                            <li>✅ វាយតម្លៃ 3 ប្រព័ន្ធសំខាន់</li>
+                            <li>✅ Tracking, Budgeting, Saving systems</li>
+                            <li>✅ កំណត់ចំណុចខ្លាំង និងចំណុចខ្វះ</li>
+                            <li>✅ ទទួលបាន readiness score</li>
+                            <li>✅ ផែនការកែលម្អជាក់ស្តែង</li>
+                        </ul>
+                        <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
+                    </div>
                 </div>
-                <div class="feature-card scroll-animate">
+
+                <div class="feature-card" onclick="toggleFeature(this)">
                     <div class="feature-icon">🗺️</div>
-                    <h3 class="feature-title">ថ្ងៃទី៤: បង្កើតផែនទីលុយ</h3>
+                    <h3 class="feature-title">
+                        ថ្ងៃទី៤: បង្កើតផែនទីលុយ
+                        <span class="expand-icon">▼</span>
+                    </h3>
                     <p>បង្កើតផែនទីចំណូល និងចំណាយយ៉ាងលម្អិត</p>
+                    <div class="feature-progress">
+                        <div class="feature-progress-bar" style="width: 60%"></div>
+                    </div>
+                    <div class="feature-details">
+                        <ul class="feature-benefits">
+                            <li>✅ ចាត់ចំណូលទាំង 3 ប្រភេទ</li>
+                            <li>✅ វិភាគចំណាយ Fixed vs Variable</li>
+                            <li>✅ បង្កើត Income & Cost Map</li>
+                            <li>✅ គណនាអាទិភាព និងភាគរយ</li>
+                            <li>✅ ផែនទីពេញលេញសម្រាប់ការសម្រេចចិត្ត</li>
+                        </ul>
+                        <div class="feature-time">⏱️ រយៈពេល: ២០-២៥ នាទី</div>
+                    </div>
                 </div>
-                <div class="feature-card scroll-animate">
+
+                <div class="feature-card" onclick="toggleFeature(this)">
                     <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">ថ្ងៃទី៥: Survival vs Growth</h3>
+                    <h3 class="feature-title">
+                        ថ្ងៃទី៥: Survival vs Growth
+                        <span class="expand-icon">▼</span>
+                    </h3>
                     <p>រៀនចាត់ចំណាយតាមអាទិភាព និងគោលដៅ</p>
+                    <div class="feature-progress">
+                        <div class="feature-progress-bar" style="width: 75%"></div>
+                    </div>
+                    <div class="feature-details">
+                        <ul class="feature-benefits">
+                            <li>✅ ចាត់ចំណាយទៅ 3 ក្រុម</li>
+                            <li>✅ Survival, Growth, Lifestyle spending</li>
+                            <li>✅ រៀបចំអាទិភាពត្រឹមត្រូវ</li>
+                            <li>✅ ធ្វើតុល្យភាពបានល្អ</li>
+                            <li>✅ ផែនការសម្រាប់ការលូតលាស់</li>
+                        </ul>
+                        <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
+                    </div>
                 </div>
-                <div class="feature-card scroll-animate">
+
+                <div class="feature-card" onclick="toggleFeature(this)">
                     <div class="feature-icon">📋</div>
-                    <h3 class="feature-title">ថ្ងៃទី៦: ផែនការសកម្មភាព</h3>
+                    <h3 class="feature-title">
+                        ថ្ងៃទី៦: ផែនការសកម្មភាព
+                        <span class="expand-icon">▼</span>
+                    </h3>
                     <p>បង្កើតផែនការអនុវត្តជាក់ស្តែងសម្រាប់ ៣០ ថ្ងៃបន្ទាប់</p>
+                    <div class="feature-progress">
+                        <div class="feature-progress-bar" style="width: 90%"></div>
+                    </div>
+                    <div class="feature-details">
+                        <ul class="feature-benefits">
+                            <li>✅ Stop/Start/Continue framework</li>
+                            <li>✅ កំណត់ 2-3 សកម្មភាពសំខាន់</li>
+                            <li>✅ ផែនការ 30 ថ្ងៃអនុវត្ត</li>
+                            <li>✅ ការត្រៀមរៀបចំសម្រាប់ជោគជ័យ</li>
+                            <li>✅ តាមដានលទ្ធផលជាក់ស្តែង</li>
+                        </ul>
+                        <div class="feature-time">⏱️ រយៈពេល: ២០-២៥ នាទី</div>
+                    </div>
                 </div>
-                <div class="feature-card scroll-animate">
+
+                <div class="feature-card" onclick="toggleFeature(this)">
                     <div class="feature-icon">🔄</div>
-                    <h3 class="feature-title">ថ្ងៃទី៧: Integration</h3>
+                    <h3 class="feature-title">
+                        ថ្ងៃទី៧: Integration
+                        <span class="expand-icon">▼</span>
+                    </h3>
                     <p>រួមបញ្ចូលនិងរៀបចំសម្រាប់ជោគជ័យរយៈពេលវែង</p>
+                    <div class="feature-progress">
+                        <div class="feature-progress-bar" style="width: 100%"></div>
+                    </div>
+                    <div class="feature-details">
+                        <ul class="feature-benefits">
+                            <li>✅ Celebrate, Build Habits, Continue Growing</li>
+                            <li>✅ រៀបចំទម្លាប់រយៈពេលវែង</li>
+                            <li>✅ ការត្រៀមរៀបចំសម្រាប់ដំណាក់កាលបន្ទាប់</li>
+                            <li>✅ រួមបញ្ចូលចំណេះដឹងទាំងអស់</li>
+                            <li>✅ ការបន្តដំណើរផ្លាស់ប្តូរ</li>
+                        </ul>
+                        <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
+                    </div>
                 </div>
-                <div class="feature-card scroll-animate">
+
+                <div class="feature-card" onclick="toggleFeature(this)">
                     <div class="feature-icon">🏛️</div>
-                    <h3 class="feature-title">🎯 Capital Clarity</h3>
+                    <h3 class="feature-title">
+                        🎯 Capital Clarity
+                        <span class="expand-icon">▼</span>
+                    </h3>
                     <p>សម្រាប់ Founders ដែលត្រៀមខ្លួនសម្រាប់ Advanced Capital Strategy</p>
+                    <div class="feature-progress">
+                        <div class="feature-progress-bar" style="width: 100%"></div>
+                    </div>
+                    <div class="feature-details">
+                        <ul class="feature-benefits">
+                            <li>✅ Private Capital Strategy Session</li>
+                            <li>✅ Capital Flow & Structure Analysis</li>
+                            <li>✅ LP (Investor) Readiness Assessment</li>
+                            <li>✅ Professional Network Access</li>
+                            <li>✅ Advanced Capital Deployment Plans</li>
+                        </ul>
+                        <div class="feature-time">⏱️ រយៈពេល: ៩០ នាទី | តម្លៃ: $197</div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">💰 គណនាការសន្សំរបស់អ្នក</h2>
+            <div class="calculator-card">
+                <h3>តើអ្នកអាចសន្សំបានប៉ុន្មាន?</h3>
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label>កាហ្វេ/ថ្ងៃ ($)</label>
+                        <input type="number" id="coffee" value="3" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Food delivery/សប្តាហ៍ ($)</label>
+                        <input type="number" id="delivery" value="20" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Subscriptions មិនប្រើ ($)</label>
+                        <input type="number" id="subscriptions" value="15" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Impulse shopping/ខែ ($)</label>
+                        <input type="number" id="impulse" value="50" min="0">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <span>ការសន្សំប្រចាំខែ:</span>
+                        <span id="monthly-savings">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>ការសន្សំប្រចាំឆ្នាំ:</span>
+                        <span id="yearly-savings">$0</span>
+                    </div>
+                </div>
+                <button onclick="startProgram()" class="calculator-cta">
+                    🚀 ចាប់ផ្តើមសន្សំឥឡូវនេះ!
+                </button>
             </div>
         </div>
     </section>
@@ -602,6 +1149,9 @@
                     <div class="testimonial-author">- វិចិត្រា, Founder</div>
                 </div>
             </div>
+            <button class="success-stories-btn" onclick="showSuccessModal()">
+                📖 អានរឿងរ៉ាវជោគជ័យបន្ថែម
+            </button>
         </div>
     </section>
 
@@ -679,20 +1229,83 @@
         </div>
     </footer>
 
+    <!-- Success Modal -->
+    <div id="success-modal">
+        <div class="modal-overlay" onclick="closeModal()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <h2>🎉 Success Stories</h2>
+                <div class="success-story">
+                    <div class="story-header">
+                        <div class="story-avatar">👨‍💼</div>
+                        <div class="story-info">
+                            <h3>លោក សុភាព</h3>
+                            <p>អ្នកប្រកបអាជីវកម្ម • Phnom Penh</p>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h4>បញ្ហាមុនពេលចូលរួម:</h4>
+                        <p>• ចំណាយលុយច្រើនពេកដោយមិនដឹងខ្លួន<br>
+                        • មិនអាចសន្សំបាន<br>
+                        • គ្មានផែនការហិរញ្ញវត្ថុច្បាស់លាស់</p>
+                        
+                        <h4>លទ្ធផលបន្ទាប់ពី 7 ថ្ងៃ:</h4>
+                        <p>• រកឃើញ Money Leaks $150/ខែ<br>
+                        • បង្កើតប្រព័ន្ធសន្សំបានល្អ<br>
+                        • មានទំនុកចិត្តក្នុងការគ្រប់គ្រងលុយ</p>
+                        
+                        <div class="story-highlight">
+                            💰 "ត្រឹមតែ 7 ថ្ងៃ ខ្ញុំអាចសន្សំបាន $150/ខែ! ឥឡូវខ្ញុំមានផែនការច្បាស់សម្រាប់អនាគត។"
+                        </div>
+                    </div>
+                </div>
+                <button onclick="startProgram()" class="modal-cta">
+                    🚀 ចាប់ផ្តើមដំណើររបស់អ្នក
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div id="progress-indicator">
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">ការផ្លាស់ប្តូរជីវិតរបស់អ្នក: <span id="progress-percent">0%</span></div>
+        </div>
+    </div>
+
+    <!-- Floating Telegram Button -->
+    <div class="floating-container">
+        <a href="https://t.me/SmartMoneyResetBot" class="floating-telegram" target="_blank">
+            📱
+        </a>
+    </div>
+
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        // Toggle feature details
+        function toggleFeature(card) {
+            const isExpanded = card.classList.contains('expanded');
+            
+            // Close all other cards
+            document.querySelectorAll('.feature-card').forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('expanded');
                 }
             });
-        });
+            
+            // Toggle current card
+            card.classList.toggle('expanded');
+            
+            // Track interaction
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'feature_expand', {
+                    'event_category': 'Engagement',
+                    'event_label': card.querySelector('.feature-title').textContent
+                });
+            }
+        }
 
         // FAQ Toggle functionality
         function toggleFAQ(element) {
@@ -724,6 +1337,100 @@
             window.open('https://t.me/SmartMoneyResetBot', '_blank');
         }
 
+        // Calculator functionality
+        function updateCalculator() {
+            const coffee = parseFloat(document.getElementById('coffee').value || 0);
+            const delivery = parseFloat(document.getElementById('delivery').value || 0);
+            const subscriptions = parseFloat(document.getElementById('subscriptions').value || 0);
+            const impulse = parseFloat(document.getElementById('impulse').value || 0);
+            
+            const monthlySavings = (coffee * 30) + (delivery * 4) + subscriptions + impulse;
+            const yearlySavings = monthlySavings * 12;
+            
+            document.getElementById('monthly-savings').textContent = `${monthlySavings.toFixed(0)}`;
+            document.getElementById('yearly-savings').textContent = `${yearlySavings.toFixed(0)}`;
+        }
+
+        // Success modal functions
+        function showSuccessModal() {
+            document.getElementById('success-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Enhanced testimonial carousel
+        let testimonialIndex = 0;
+        const testimonials = [
+            {
+                text: "កម្មវិធីនេះបានផ្លាស់ប្តូរជីវិតខ្ញុំ! ខ្ញុំរកឃើញ Money Leaks ចំនួន $150/ខែ ហើយឥឡូវខ្ញុំអាចសន្សំបានហើយ។",
+                author: "សុភាព, អ្នកប្រកបអាជីវកម្ម"
+            },
+            {
+                text: "ភាសាខ្មែរ ១០០% ធ្វើឱ្យខ្ញុំយល់បានច្បាស់។ ឥឡូវខ្ញុំមានទំនុកចិត្តក្នុងការគ្រប់គ្រងលុយរបស់ខ្ញុំ។",
+                author: "ចន្ទរី, បុគ្គលិកក្រុមហ៊ុន"
+            },
+            {
+                text: "Capital Clarity Session បានជួយខ្ញុំរៀបចំផែនការសម្រាប់ការបង្កើនមូលធនក្រុមហ៊ុន។ វាមានតម្លៃខ្ពស់ណាស់!",
+                author: "វិចិត្រា, Founder"
+            },
+            {
+                text: "ត្រឹមតែ 7 ថ្ងៃ ខ្ញុំស្វែងរកបាន money leaks $80/ខែ។ គ្រាន់តែកាត់ subscription មិនប្រើ!",
+                author: "ដារ៉ា, និស្សិត"
+            },
+            {
+                text: "VIP Capital Strategy បានជួយខ្ញុំត្រៀមខ្លួនសម្រាប់ការស្វែងរកវិនិយោគិន។ ឥឡូវខ្ញុំទទួលបានការគាំទ្រ!",
+                author: "សុវណ្ណ, Tech Startup"
+            }
+        ];
+
+        function rotateTestimonial() {
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            if (testimonialCards.length === 0) return;
+            
+            testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+            
+            testimonialCards.forEach((card, index) => {
+                const testimonial = testimonials[(testimonialIndex + index) % testimonials.length];
+                const textElement = card.querySelector('.testimonial-text');
+                const authorElement = card.querySelector('.testimonial-author');
+                
+                if (textElement && authorElement) {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                    
+                    setTimeout(() => {
+                        textElement.textContent = testimonial.text;
+                        authorElement.textContent = `- ${testimonial.author}`;
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 300);
+                }
+            });
+        }
+
+        // Update progress based on scroll
+        function updateProgress() {
+            const progress = document.getElementById('progress-indicator');
+            const progressFill = document.querySelector('.progress-fill');
+            const progressPercent = document.getElementById('progress-percent');
+            
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            if (scrollTop > 200) {
+                progress.style.display = 'block';
+                progressFill.style.width = scrollPercent + '%';
+                progressPercent.textContent = Math.round(scrollPercent) + '%';
+            } else {
+                progress.style.display = 'none';
+            }
+        }
+
         // Scroll animations
         function handleScrollAnimations() {
             const elements = document.querySelectorAll('.scroll-animate');
@@ -739,145 +1446,75 @@
             });
         }
 
-        // Initialize scroll animations
-        window.addEventListener('scroll', handleScrollAnimations);
-        window.addEventListener('load', handleScrollAnimations);
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-        // Mobile menu toggle (if needed)
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
+        // Initialize everything when page loads
+        window.addEventListener('load', function() {
+            // Add calculator event listeners
+            ['coffee', 'delivery', 'subscriptions', 'impulse'].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('input', updateCalculator);
+                }
+            });
+            
+            // Initial calculation
+            updateCalculator();
+            
+            // Start testimonial rotation
+            setInterval(rotateTestimonial, 5000);
+            
+            // Initialize scroll animations
+            handleScrollAnimations();
+            
+            // Add loading complete class
+            document.body.classList.add('loaded');
+        });
 
-        // Add mobile menu functionality
-        const navToggle = document.createElement('button');
-        navToggle.innerHTML = '☰';
-        navToggle.classList.add('nav-toggle');
-        navToggle.onclick = toggleMobileMenu;
+        // Add scroll event listeners
+        window.addEventListener('scroll', function() {
+            updateProgress();
+            handleScrollAnimations();
+        });
 
-        // Add mobile styles
-        const mobileStyles = `
-            @media (max-width: 768px) {
-                .nav-toggle {
-                    display: block;
-                    background: none;
-                    border: none;
-                    color: white;
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                }
-                
-                .nav-links {
-                    position: fixed;
-                    top: 70px;
-                    left: -100%;
-                    width: 100%;
-                    height: calc(100vh - 70px);
-                    background: rgba(30, 60, 114, 0.95);
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: center;
-                    padding-top: 2rem;
-                    transition: left 0.3s ease;
-                    backdrop-filter: blur(10px);
-                }
-                
-                .nav-links.active {
-                    left: 0;
-                }
-                
-                .nav-links li {
-                    margin: 1rem 0;
-                }
-                
-                .hero h1 {
-                    font-size: 2.2rem;
-                }
-                
-                .hero-subtitle {
-                    font-size: 1.1rem;
-                }
-                
-                .hero-description {
-                    font-size: 1rem;
-                }
-                
-                .cta-button {
-                    padding: 15px 30px;
-                    font-size: 1rem;
-                }
-                
-                .pricing-grid {
-                    grid-template-columns: 1fr;
-                }
-                
-                .pricing-card.popular {
-                    transform: none;
-                    order: -1;
-                }
-                
-                .feature-card {
-                    padding: 1.5rem;
-                }
-                
-                .testimonial-grid {
-                    grid-template-columns: 1fr;
-                }
+        // Add conversion tracking
+        function trackConversion(action, value) {
+            // Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    'event_category': 'Conversion',
+                    'event_label': value,
+                    'value': value
+                });
             }
             
-            @media (max-width: 480px) {
-                .container {
-                    padding: 0 15px;
-                }
-                
-                .hero {
-                    padding: 100px 0 60px;
-                }
-                
-                .hero h1 {
-                    font-size: 1.8rem;
-                }
-                
-                .section-title {
-                    font-size: 1.8rem;
-                }
-                
-                .pricing-card {
-                    padding: 2rem 1.5rem;
-                }
-                
-                .program-features {
-                    grid-template-columns: 1fr;
-                }
+            // Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', action, {value: value, currency: 'USD'});
             }
-        `;
+        }
 
-        // Add mobile styles to head
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = mobileStyles;
-        document.head.appendChild(styleSheet);
-
-        // Add mobile menu button to nav
-        const nav = document.querySelector('nav');
-        nav.appendChild(navToggle);
-
-        // Performance optimization - Lazy load images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
+        // Enhanced CTA button with conversion tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.cta-button, .select-plan, .calculator-cta, .modal-cta').forEach(button => {
+                button.addEventListener('click', function() {
+                    const planType = this.closest('.pricing-card')?.querySelector('h3')?.textContent || 'CTA Click';
+                    trackConversion('InitiateCheckout', planType);
                 });
             });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
+        });
 
         // Add structured data for SEO
         const structuredData = {
@@ -920,111 +1557,6 @@
         script.type = 'application/ld+json';
         script.textContent = JSON.stringify(structuredData);
         document.head.appendChild(script);
-
-        // Add conversion tracking
-        function trackConversion(action, value) {
-            // Google Analytics 4
-            if (typeof gtag !== 'undefined') {
-                gtag('event', action, {
-                    'event_category': 'Conversion',
-                    'event_label': value,
-                    'value': value
-                });
-            }
-            
-            // Facebook Pixel
-            if (typeof fbq !== 'undefined') {
-                fbq('track', action, {value: value, currency: 'USD'});
-            }
-        }
-
-        // Enhanced CTA button with conversion tracking
-        document.querySelectorAll('.cta-button, .select-plan').forEach(button => {
-            button.addEventListener('click', function() {
-                const planType = this.closest('.pricing-card')?.querySelector('h3')?.textContent || 'Hero CTA';
-                trackConversion('InitiateCheckout', planType);
-            });
-        });
-
-        // Add exit-intent popup (optional)
-        let exitIntentShown = false;
-        document.addEventListener('mouseleave', function(e) {
-            if (e.clientY <= 0 && !exitIntentShown) {
-                exitIntentShown = true;
-                // Add exit intent modal here if needed
-                console.log('Exit intent detected - could show special offer');
-            }
-        });
-
-        // Preload critical resources
-        function preloadCriticalResources() {
-            const preloadLinks = [
-                'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Khmer:wght@300;400;500;600;700&display=swap'
-            ];
-            
-            preloadLinks.forEach(href => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'style';
-                link.href = href;
-                document.head.appendChild(link);
-            });
-        }
-
-        // Initialize performance optimizations
-        window.addEventListener('load', function() {
-            preloadCriticalResources();
-            
-            // Add loading complete class for animations
-            document.body.classList.add('loaded');
-        });
-
-        // Add WhatsApp/Telegram floating buttons
-        function addFloatingButtons() {
-            const floatingContainer = document.createElement('div');
-            floatingContainer.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                z-index: 1000;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            `;
-
-            const telegramButton = document.createElement('a');
-            telegramButton.href = 'https://t.me/SmartMoneyResetBot';
-            telegramButton.target = '_blank';
-            telegramButton.innerHTML = '📱';
-            telegramButton.style.cssText = `
-                width: 60px;
-                height: 60px;
-                background: linear-gradient(45deg, #0088cc, #0099dd);
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                font-size: 24px;
-                box-shadow: 0 4px 20px rgba(0, 136, 204, 0.3);
-                transition: transform 0.3s;
-            `;
-            
-            telegramButton.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.1)';
-            });
-            
-            telegramButton.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
-
-            floatingContainer.appendChild(telegramButton);
-            document.body.appendChild(floatingContainer);
-        }
-
-        // Initialize floating buttons
-        addFloatingButtons();
     </script>
 </body>
 </html>
