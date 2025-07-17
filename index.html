@@ -65,36 +65,11 @@
             opacity: 0.8;
         }
 
-        /* Urgency Banner */
-        .urgency-banner {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 8px 0;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-            position: fixed;
-            top: 70px;
-            width: 100%;
-            z-index: 999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .urgency-timer {
-            background: rgba(255,255,255,0.2);
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-family: monospace;
-        }
-
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 150px 0 80px;
+            padding: 120px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -175,48 +150,6 @@
 
         .cta-button:hover::before {
             left: 100%;
-        }
-
-        /* Trust Indicators */
-        .trust-indicators {
-            background: #f8fafc;
-            padding: 60px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .trust-badges {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .trust-item {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .trust-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .trust-number {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-
-        .trust-label {
-            font-size: 1.1rem;
-            color: #4a5568;
-            font-weight: 500;
         }
 
         /* Program Overview */
@@ -544,51 +477,6 @@
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
 
-        /* Guarantee Badge */
-        .guarantee-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(45deg, #28a745, #20c997);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        /* Video Testimonials */
-        .video-testimonials {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-
-        .video-testimonial {
-            max-width: 600px;
-            margin: 2rem auto;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .video-testimonial video {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .video-caption {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .video-caption strong {
-            color: #667eea;
-            font-size: 1.1rem;
-        }
-
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
@@ -683,167 +571,6 @@
 
         .faq-answer.active {
             display: block;
-        }
-
-        /* Social Proof Notifications */
-        .social-proof-notification {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            z-index: 1000;
-            animation: slideInUp 0.3s ease;
-            max-width: 300px;
-        }
-
-        @keyframes slideInUp {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .notification-content {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .notification-icon {
-            font-size: 1.5rem;
-        }
-
-        .notification-text {
-            font-size: 0.9rem;
-            color: #4a5568;
-        }
-
-        .notification-text strong {
-            color: #667eea;
-        }
-
-        /* Live Chat Widget */
-        .live-chat {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 300px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: none;
-        }
-
-        .chat-header {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px;
-            border-radius: 15px 15px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-body {
-            padding: 15px;
-        }
-
-        .chat-message {
-            background: #f8fafc;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: #4a5568;
-        }
-
-        .chat-input {
-            display: flex;
-            gap: 10px;
-        }
-
-        .chat-input input {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #e2e8f0;
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-
-        .chat-input button {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        /* Exit Intent Popup */
-        .exit-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .exit-popup-content {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            max-width: 500px;
-            margin: 20px;
-        }
-
-        .exit-popup h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-
-        .exit-popup p {
-            color: #4a5568;
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-        }
-
-        .exit-popup button {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        .exit-popup .close-btn {
-            background: #64748b;
-            margin-left: 10px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         /* Footer */
@@ -970,7 +697,7 @@
         /* Progress Indicator */
         #progress-indicator {
             position: fixed;
-            top: 110px;
+            top: 70px;
             left: 0;
             width: 100%;
             background: rgba(255,255,255,0.95);
@@ -1029,26 +756,16 @@
             font-size: 24px;
             box-shadow: 0 4px 20px rgba(0, 136, 204, 0.3);
             transition: transform 0.3s;
-            animation: pulse 2s infinite;
         }
 
         .floating-telegram:hover {
             transform: scale(1.1);
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-            }
-
-            .hero {
-                padding: 130px 0 60px;
             }
 
             .hero h1 {
@@ -1069,28 +786,6 @@
 
             .calculator-inputs {
                 grid-template-columns: 1fr;
-            }
-
-            .trust-badges {
-                grid-template-columns: 1fr;
-            }
-
-            .urgency-banner {
-                flex-direction: column;
-                gap: 5px;
-                padding: 10px 0;
-            }
-
-            .live-chat {
-                width: 280px;
-                bottom: 80px;
-                right: 10px;
-            }
-
-            .social-proof-notification {
-                max-width: 250px;
-                bottom: 10px;
-                left: 10px;
             }
         }
 
@@ -1120,34 +815,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Countdown Timer Styles */
-        .countdown-container {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .countdown-item {
-            background: rgba(255,255,255,0.1);
-            padding: 5px 10px;
-            border-radius: 5px;
-            text-align: center;
-            min-width: 40px;
-        }
-
-        .countdown-number {
-            font-size: 1.2rem;
-            font-weight: bold;
-            display: block;
-        }
-
-        .countdown-label {
-            font-size: 0.7rem;
-            opacity: 0.8;
-        }
     </style>
 </head>
 <body>
@@ -1165,67 +832,18 @@
         </nav>
     </header>
 
-    <!-- Urgency Banner -->
-    <div class="urgency-banner">
-        <span class="urgency-text">⚡ Limited: Only 23 spots left this month</span>
-        <div class="urgency-timer" id="countdown-timer">
-            <div class="countdown-container">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="days">00</span>
-                    <span class="countdown-label">Days</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="hours">00</span>
-                    <span class="countdown-label">Hours</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">00</span>
-                    <span class="countdown-label">Min</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">00</span>
-                    <span class="countdown-label">Sec</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content fade-in-up">
-                <h1 id="hero-title">7-Day Money Flow Reset™</h1>
-                <p class="hero-subtitle">ផ្លាស់ប្តូរជីវិតហិរញ្ញវត្ថុរបស់អ្នកក្នុងរយៈពេលតែ ៧ ថ្ងៃប៉ុណ្ណោះ</p>
+                <h1>7-Day Money Flow Reset™</h1>
+                <p class="hero-subtitle">ផ្លាស់ប្តូរជីវិតហិរញ្ញវត្ថុរបស់អ្នកក្នុងរយៈពេលតែ ៧ ថ្ងៃ</p>
                 <p class="hero-description">
                     រៀនគ្រប់គ្រងលុយប្រកបដោយប្រសិទ្ធភាព រកឃើញការលេចធ្លាយនៃលុយ និងបង្កើតប្រព័ន្ធហិរញ្ញវត្ថុដែលនាំឱ្យជោគជ័យ។ កម្មវិធីគ្រប់គ្រងហិរញ្ញវត្ថុជាភាសាខ្មែរ ១០០% ដំបូងគេនៅកម្ពុជា!
                 </p>
-                <a href="https://t.me/SmartMoneyResetBot" class="cta-button" id="main-cta">
+                <a href="https://t.me/SmartMoneyResetBot" class="cta-button">
                     🚀 ចាប់ផ្តើមឥឡូវ Start Now
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Indicators -->
-    <section class="trust-indicators scroll-animate">
-        <div class="container">
-            <div class="trust-badges">
-                <div class="trust-item">
-                    <span class="trust-number">100+</span>
-                    <span class="trust-label">Early Members</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">7</span>
-                    <span class="trust-label">Day Program</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">24/7</span>
-                    <span class="trust-label">Support Available</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">100%</span>
-                    <span class="trust-label">Khmer Language</span>
-                </div>
             </div>
         </div>
     </section>
@@ -1272,7 +890,7 @@
                             <li>✅ ស្វែងរក 5 ប្រភេទ Money Leaks លុយលេចធ្លាយ</li>
                             <li>✅ Digital subscriptions ដែលមិនប្រើ</li>
                             <li>✅ Convenience spending ដែលចំណាយច្រើន</li>
-                            <li>✅ 4 Money Hacks ដើម្បីបិទ Money Leaks</li>
+                            <li>✅ 4 Hacks ដើម្បីបិទ Money Leaks</li>
                             <li>✅ សន្សំបាន $50-200/ខែ</li>
                         </ul>
                         <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
@@ -1461,10 +1079,9 @@
             <h2 class="section-title">💰 ជ្រើសរើសកម្មវិធីសម្រាប់អ្នក</h2>
             <div class="pricing-grid">
                 <div class="pricing-card scroll-animate">
-                    <div class="guarantee-badge">30-Day Guarantee</div>
                     <h3>Essential Program</h3>
                     <div class="price">$47</div>
-                    <p class="price-subtitle">(១៩០,៣៥០ រៀល)</p>
+                    <p class="price-subtitle">(២៨២,០០០ រៀល)</p>
                     <ul class="features-list">
                         <li>សារទាំង ៧ ថ្ងៃ</li>
                         <li>Templates & Worksheets</li>
@@ -1477,26 +1094,23 @@
 
                 <div class="pricing-card popular scroll-animate">
                     <div class="popular-badge">🌟 Popular Choice</div>
-                    <div class="guarantee-badge">30-Day Guarantee</div>
                     <h3>Premium + Support</h3>
                     <div class="price">$97</div>
-                    <p class="price-subtitle">(៣៩២,៨៥០ រៀល)</p>
+                    <p class="price-subtitle">(៥៨១,០០០ រៀល)</p>
                     <ul class="features-list">
                         <li>រួមបញ្ចូល Essential +</li>
                         <li>ការទាក់ទងផ្ទាល់ @Chendasum</li>
                         <li>24/7 support</li>
                         <li>ជំនួយបញ្ហាផ្ទាល់</li>
                         <li>អាទិភាពក្នុងការឆ្លើយ</li>
-                        <li>សម្រង់ប្រាជ្ញាប្រចាំថ្ងៃ</li>
                     </ul>
                     <button class="select-plan" onclick="startProgram()">ជ្រើសរើសកម្មវិធីនេះ</button>
                 </div>
 
                 <div class="pricing-card scroll-animate">
-                    <div class="guarantee-badge">30-Day Guarantee</div>
                     <h3>VIP Capital Strategy</h3>
                     <div class="price">$197</div>
-                    <p class="price-subtitle">(៧៩៧,៨៥០ រៀល)</p>
+                    <p class="price-subtitle">(១,១៨៨,០០០ រៀល)</p>
                     <ul class="features-list">
                         <li>រួមបញ្ចូល Premium +</li>
                         <li>1-on-1 Capital Strategy Session</li>
@@ -1506,22 +1120,6 @@
                         <li>Private Network Access</li>
                     </ul>
                     <button class="select-plan" onclick="startProgram()">ជ្រើសរើសកម្មវិធីនេះ</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Testimonials -->
-    <section class="video-testimonials">
-        <div class="container">
-            <h2 class="section-title scroll-animate">🎬 Video Success Stories</h2>
-            <div class="video-testimonial scroll-animate">
-                <div style="background: #f8fafc; height: 300px; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 1.1rem;">
-                    📹 Video testimonial placeholder<br>
-                    <small>Real customer stories coming soon</small>
-                </div>
-                <div class="video-caption">
-                    <strong>សុភាព</strong> - "បទពិសោធន៍ជាមួយ 7-Day Money Flow Reset"
                 </div>
             </div>
         </div>
@@ -1593,22 +1191,6 @@
                     សម្រាប់ Founders និង Operators ដែលចង់បង្កើនមូលធន និងរៀបចំប្រព័ន្ធហិរញ្ញវត្ថុកម្រិតខ្ពស់។ តម្រូវឱ្យមានការវាយតម្លៃ និងទទួលយកតែអ្នកមានលក្ខណៈសម្បត្តិគ្រប់គ្រាន់។
                 </div>
             </div>
-            <div class="faq-item scroll-animate">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    តើអាចទូទាត់តាមវិធីណាខ្លះ?
-                </div>
-                <div class="faq-answer">
-                    យើងទទួលការទូទាត់តាម ABA, ACLEDA, Wing, PayPal, និងកាតឥណទាន។ ការទូទាត់ត្រូវបានធានាសុវត្ថិភាព 100%។
-                </div>
-            </div>
-            <div class="faq-item scroll-animate">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    បើខ្ញុំមិនពេញចិត្ត តើធ្វើម៉េច?
-                </div>
-                <div class="faq-answer">
-                    យើងមានការធានា 30-Day Money Back Guarantee។ បើអ្នកអនុវត្តតាមកម្មវិធីហើយមិនពេញចិត្ត យើងនឹងផ្ញើលុយមកវិញពេញ 100%។
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1628,9 +1210,9 @@
                 </div>
                 <div class="footer-section">
                     <h3>កម្មវិធី</h3>
-                    <p>Essential Program - $47 (១៩០,៣៥០ រៀល)</p>
-                    <p>Premium + Support - $97 (៣៩២,៨៥០ រៀល)</p>
-                    <p>VIP Capital Strategy - $197 (៧៩៧,៨៥០ រៀល)</p>
+                    <p>Essential Program - $47</p>
+                    <p>Premium + Support - $97</p>
+                    <p>VIP Capital Strategy - $197</p>
                     <p>Capital Clarity Sessions - $197</p>
                 </div>
                 <div class="footer-section">
@@ -1675,11 +1257,6 @@
                         <div class="story-highlight">
                             💰 "ត្រឹមតែ 7 ថ្ងៃ ខ្ញុំអាចសន្សំបាន $150/ខែ! ឥឡូវខ្ញុំមានផែនការច្បាស់សម្រាប់អនាគត។"
                         </div>
-
-                        <h4>ដំណើរបន្ត:</h4>
-                        <p>• ក្រោយ 3 ខែ: សន្សំបាន $450<br>
-                        • ក្រោយ 6 ខែ: បង្កើន emergency fund $1,200<br>
-                        • ក្រោយ 1 ឆ្នាំ: ចាប់ផ្តើមវិនិយោគ និងបង្កើនអាជីវកម្ម</p>
                     </div>
                 </div>
                 <button onclick="startProgram()" class="modal-cta">
@@ -1699,24 +1276,6 @@
         </div>
     </div>
 
-    <!-- Live Chat Widget -->
-    <div class="live-chat" id="live-chat">
-        <div class="chat-header">
-            <span>💬 Need Help?</span>
-            <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">×</button>
-        </div>
-        <div class="chat-body">
-            <div class="chat-message">
-                <strong>Sum Chenda:</strong> 
-                សួស្តី! មានសំណួរអ្វីអំពីកម្មវិធីទេ? ខ្ញុំនៅទីនេះជួយអ្នក! 😊
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="Type your question..." id="chat-input">
-                <button onclick="sendToTelegram()">Send</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Floating Telegram Button -->
     <div class="floating-container">
         <a href="https://t.me/SmartMoneyResetBot" class="floating-telegram" target="_blank">
@@ -1725,142 +1284,6 @@
     </div>
 
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const endTime = new Date().getTime() + (5 * 24 * 60 * 60 * 1000); // 5 days from now
-            const now = new Date().getTime();
-            const timeLeft = endTime - now;
-
-            if (timeLeft > 0) {
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            }
-        }
-
-        // Social Proof Notifications
-        function showSocialProof() {
-            const names = ['សុភាព', 'ចន្ទរី', 'វិចិត្រា', 'ដារ៉ា', 'សុវណ្ណ', 'ម៉ារា', 'ទេព', 'ស្រេយ'];
-            const locations = ['Phnom Penh', 'Siem Reap', 'Battambang', 'Kandal', 'Kampong Cham'];
-            const programs = ['Essential Program', 'Premium Program', 'VIP Capital Strategy'];
-            
-            const notification = document.createElement('div');
-            notification.className = 'social-proof-notification';
-            notification.innerHTML = `
-                <div class="notification-content">
-                    <span class="notification-icon">🎉</span>
-                    <div class="notification-text">
-                        <strong>${names[Math.floor(Math.random() * names.length)]}</strong> 
-                        from ${locations[Math.floor(Math.random() * locations.length)]} 
-                        just joined ${programs[Math.floor(Math.random() * programs.length)]}!
-                    </div>
-                </div>
-            `;
-            
-            document.body.appendChild(notification);
-            setTimeout(() => notification.remove(), 5000);
-        }
-
-        // Exit Intent Popup
-        let exitIntentShown = false;
-        document.addEventListener('mouseout', function(e) {
-            if (e.clientY <= 0 && !exitIntentShown) {
-                showExitIntent();
-                exitIntentShown = true;
-            }
-        });
-
-        function showExitIntent() {
-            const popup = document.createElement('div');
-            popup.className = 'exit-popup';
-            popup.innerHTML = `
-                <div class="exit-popup-content">
-                    <h3>🎁 Wait! Special Offer</h3>
-                    <p>Get Essential Program for only $39!<br>
-                    <small>(Regular price $47 - Save $8)</small></p>
-                    <button onclick="startProgram(); closeExitIntent()">
-                        🔥 Claim Special Offer
-                    </button>
-                    <button class="close-btn" onclick="closeExitIntent()">
-                        Maybe Later
-                    </button>
-                </div>
-            `;
-            document.body.appendChild(popup);
-            window.exitPopup = popup;
-        }
-
-        function closeExitIntent() {
-            if (window.exitPopup) {
-                window.exitPopup.remove();
-            }
-        }
-
-        // Live Chat Functions
-        function toggleChat() {
-            const chat = document.getElementById('live-chat');
-            chat.style.display = chat.style.display === 'none' ? 'block' : 'none';
-        }
-
-        function sendToTelegram() {
-            const input = document.getElementById('chat-input');
-            const message = input.value.trim();
-            if (message) {
-                const telegramUrl = `https://t.me/SmartMoneyResetBot?start=${encodeURIComponent(message)}`;
-                window.open(telegramUrl, '_blank');
-                input.value = '';
-                toggleChat();
-            }
-        }
-
-        // A/B Testing
-        function initABTest() {
-            const isVariantB = Math.random() < 0.5;
-            const mainCTA = document.getElementById('main-cta');
-            
-            if (isVariantB) {
-                mainCTA.textContent = '🔥 Join 500+ Success Stories';
-                mainCTA.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
-                
-                // Track variant
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'ab_test', {
-                        'event_category': 'Experiment',
-                        'event_label': 'variant_b'
-                    });
-                }
-            } else {
-                // Track control
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'ab_test', {
-                        'event_category': 'Experiment',
-                        'event_label': 'variant_a'
-                    });
-                }
-            }
-        }
-
-        // Returning Visitor Personalization
-        function checkReturningVisitor() {
-            if (localStorage.getItem('visited')) {
-                const heroTitle = document.getElementById('hero-title');
-                heroTitle.textContent = '🎉 Welcome Back! Ready to Reset?';
-                
-                // Show returning visitor message
-                setTimeout(() => {
-                    showSocialProof();
-                }, 2000);
-            } else {
-                localStorage.setItem('visited', 'true');
-            }
-        }
-
         // Toggle feature details
         function toggleFeature(card) {
             const isExpanded = card.classList.contains('expanded');
@@ -1908,11 +1331,6 @@
                     'event_category': 'CTA',
                     'event_label': 'Start Program'
                 });
-            }
-            
-            // Track Facebook Pixel
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'InitiateCheckout');
             }
             
             // Redirect to Telegram bot
@@ -2042,26 +1460,6 @@
             });
         });
 
-        // Track scroll depth for analytics
-        function trackScrollDepth() {
-            const checkpoints = [25, 50, 75, 100];
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (window.pageYOffset / docHeight) * 100;
-            
-            checkpoints.forEach(checkpoint => {
-                if (scrollPercent >= checkpoint && !window[`scrolled${checkpoint}`]) {
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'scroll', {
-                            'event_category': 'Engagement',
-                            'event_label': `${checkpoint}%`,
-                            'value': checkpoint
-                        });
-                    }
-                    window[`scrolled${checkpoint}`] = true;
-                }
-            });
-        }
-
         // Initialize everything when page loads
         window.addEventListener('load', function() {
             // Add calculator event listeners
@@ -2075,32 +1473,8 @@
             // Initial calculation
             updateCalculator();
             
-            // Initialize A/B testing
-            initABTest();
-            
-            // Check returning visitor
-            checkReturningVisitor();
-            
-            // Start countdown timer
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-            
             // Start testimonial rotation
             setInterval(rotateTestimonial, 5000);
-            
-            // Show social proof notifications
-            setTimeout(() => {
-                showSocialProof();
-                setInterval(showSocialProof, 30000);
-            }, 5000);
-            
-            // Show live chat after 10 seconds
-            setTimeout(() => {
-                document.getElementById('live-chat').style.display = 'block';
-                setTimeout(() => {
-                    document.getElementById('live-chat').style.display = 'none';
-                }, 8000);
-            }, 10000);
             
             // Initialize scroll animations
             handleScrollAnimations();
@@ -2113,10 +1487,9 @@
         window.addEventListener('scroll', function() {
             updateProgress();
             handleScrollAnimations();
-            trackScrollDepth();
         });
 
-        // Enhanced conversion tracking
+        // Add conversion tracking
         function trackConversion(action, value) {
             // Google Analytics 4
             if (typeof gtag !== 'undefined') {
@@ -2143,18 +1516,6 @@
             });
         });
 
-        // Chat input enter key support
-        document.addEventListener('DOMContentLoaded', function() {
-            const chatInput = document.getElementById('chat-input');
-            if (chatInput) {
-                chatInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        sendToTelegram();
-                    }
-                });
-            }
-        });
-
         // Add structured data for SEO
         const structuredData = {
             "@context": "https://schema.org",
@@ -2171,81 +1532,31 @@
                     "@type": "Offer",
                     "name": "Essential Program",
                     "price": "47",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
+                    "priceCurrency": "USD"
                 },
                 {
                     "@type": "Offer",
                     "name": "Premium + Support",
                     "price": "97",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
+                    "priceCurrency": "USD"
                 },
                 {
                     "@type": "Offer",
                     "name": "VIP Capital Strategy",
                     "price": "197",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
+                    "priceCurrency": "USD"
                 }
             ],
             "courseMode": "online",
             "educationalLevel": "beginner",
             "inLanguage": ["km", "en"],
-            "timeRequired": "P7D",
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "500",
-                "bestRating": "5"
-            },
-            "review": [
-                {
-                    "@type": "Review",
-                    "author": {
-                        "@type": "Person",
-                        "name": "សុភាព"
-                    },
-                    "reviewRating": {
-                        "@type": "Rating",
-                        "ratingValue": "5"
-                    },
-                    "reviewBody": "កម្មវិធីនេះបានផ្លាស់ប្តូរជីវិតខ្ញុំ! ខ្ញុំរកឃើញ Money Leaks ចំនួន $150/ខែ ហើយឥឡូវខ្ញុំអាចសន្សំបានហើយ។"
-                }
-            ]
+            "timeRequired": "P7D"
         };
 
         const script = document.createElement('script');
         script.type = 'application/ld+json';
         script.textContent = JSON.stringify(structuredData);
         document.head.appendChild(script);
-
-        // Add Google Analytics tracking code (replace with your tracking ID)
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_TRACKING_ID'); // Replace with your actual tracking ID
-
-        // Add Facebook Pixel tracking code (replace with your pixel ID)
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID'); // Replace with your actual pixel ID
-        fbq('track', 'PageView');
     </script>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    
-    <!-- Facebook Pixel -->
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
-    </noscript>
-
 </body>
 </html>
