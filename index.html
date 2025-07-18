@@ -152,6 +152,48 @@
             left: 100%;
         }
 
+        /* Trust Indicators */
+        .trust-indicators {
+            background: #f8fafc;
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .trust-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-label {
+            font-size: 1.1rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
         /* Program Overview */
         .program-overview {
             padding: 80px 0;
@@ -431,6 +473,19 @@
             font-size: 0.9rem;
         }
 
+        .guarantee-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
         .price {
             font-size: 3rem;
             font-weight: 700;
@@ -520,23 +575,6 @@
             color: #2d3748;
         }
 
-        .success-stories-btn {
-            display: block;
-            margin: 2rem auto 0;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: transform 0.3s;
-        }
-
-        .success-stories-btn:hover {
-            transform: translateY(-2px);
-        }
-
         /* FAQ Section */
         .faq {
             padding: 80px 0;
@@ -599,148 +637,144 @@
             color: #a0aec0;
         }
 
-        /* Success Modal */
-        #success-modal {
-            display: none;
+        /* Contact Message Box */
+        .contact-box {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10000;
+            bottom: 100px;
+            right: 20px;
+            width: 320px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            animation: slideInUp 0.3s ease;
         }
 
-        .modal-overlay {
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
+        .contact-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .close-contact {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+            width: 25px;
+            height: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .contact-body {
             padding: 20px;
         }
 
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-            animation: modalSlideIn 0.3s ease;
+        .contact-intro {
+            margin-bottom: 15px;
+            color: #4a5568;
+            font-size: 0.95rem;
         }
 
-        @keyframes modalSlideIn {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #64748b;
-        }
-
-        .story-header {
+        .contact-form {
             display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .story-avatar {
-            font-size: 3rem;
+        .contact-input {
+            padding: 10px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
         }
 
-        .story-info h3 {
-            margin: 0;
-            color: #2d3748;
+        .contact-input:focus {
+            outline: none;
+            border-color: #667eea;
         }
 
-        .story-info p {
-            margin: 0;
-            color: #64748b;
+        .contact-textarea {
+            min-height: 80px;
+            resize: vertical;
         }
 
-        .story-content h4 {
-            color: #667eea;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .story-highlight {
-            background: #f0f8ff;
-            border-left: 4px solid #667eea;
-            padding: 1rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: #2d3748;
-        }
-
-        .modal-cta {
-            width: 100%;
+        .contact-submit {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            padding: 15px 30px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 1rem;
+            transition: transform 0.3s;
         }
 
-        /* Progress Indicator */
-        #progress-indicator {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 0;
-            z-index: 999;
-            display: none;
+        .contact-submit:hover {
+            transform: translateY(-1px);
         }
 
-        .progress-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: #e2e8f0;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 5px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .progress-text {
-            font-size: 0.9rem;
-            color: #4a5568;
-            text-align: center;
-        }
-
-        /* Floating Button */
-        .floating-container {
+        .contact-toggle {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s;
             z-index: 1000;
+        }
+
+        .contact-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-box {
+                width: 300px;
+                bottom: 90px;
+                right: 10px;
+            }
+            
+            .contact-toggle {
+                bottom: 10px;
+                left: 10px;
+            }
         }
 
         .floating-telegram {
@@ -756,10 +790,16 @@
             font-size: 24px;
             box-shadow: 0 4px 20px rgba(0, 136, 204, 0.3);
             transition: transform 0.3s;
+            animation: pulse 2s infinite;
         }
 
         .floating-telegram:hover {
             transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         /* Mobile Responsive */
@@ -786,6 +826,10 @@
 
             .calculator-inputs {
                 grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -848,6 +892,30 @@
         </div>
     </section>
 
+    <!-- Trust Indicators -->
+    <section class="trust-indicators scroll-animate">
+        <div class="container">
+            <div class="trust-badges">
+                <div class="trust-item">
+                    <span class="trust-number">50+</span>
+                    <span class="trust-label">Early Members</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">7</span>
+                    <span class="trust-label">Day Program</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">24/7</span>
+                    <span class="trust-label">Support Available</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">100%</span>
+                    <span class="trust-label">Khmer Language</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Program Overview -->
     <section id="program" class="program-overview">
         <div class="container">
@@ -865,11 +933,11 @@
                     </div>
                     <div class="feature-details">
                         <ul class="feature-benefits">
-                            <li>✅ ស្វែងយល់ពី 4 ប្រភេទចំណូលចម្បង</li>
-                            <li>✅ វិភាគចំណាយតាម 4 ក្រុម</li>
-                            <li>✅ គណនា Money Flow ដោយស្វ័យប្រវត្តិ</li>
-                            <li>✅ ស្គាល់ 50/30/20 Golden Rule</li>
-                            <li>✅ ការវាយតម្លៃ financial health</li>
+                            <li>✅ ស្វែងយល់ចំណូល ៤ ប្រភេទ</li>
+                            <li>✅ វិភាគចំណាយ ៤ ក្រុមសំខាន់</li>
+                            <li>✅ គណនាលំហូរលុយស្វ័យប្រវត្តិ</li>
+                            <li>✅ ប្រើច្បាប់មាស 50/30/20</li>
+                            <li>✅ វាយតម្លៃសុខភាពហិរញ្ញវត្ថុ</li>
                         </ul>
                         <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
                     </div>
@@ -887,11 +955,11 @@
                     </div>
                     <div class="feature-details">
                         <ul class="feature-benefits">
-                            <li>✅ ស្វែងរក 5 ប្រភេទ Money Leaks លុយលេចធ្លាយ</li>
-                            <li>✅ Digital subscriptions ដែលមិនប្រើ</li>
-                            <li>✅ Convenience spending ដែលចំណាយច្រើន</li>
-                            <li>✅ 4 Hacks ដើម្បីបិទ Money Leaks</li>
-                            <li>✅ សន្សំបាន $50-200/ខែ</li>
+                            <li>✅ ស្វែងរកការលេចលុយ ៥ ប្រភេទ</li>
+                            <li>✅ ពិនិត្យ subscription មិនប្រើ</li>
+                            <li>✅ កាត់បន្ថយការចំណាយហួស</li>
+                            <li>✅ ប្រើ ៤ វិធីបិទការលេចលុយ</li>
+                            <li>✅ សន្សំបាន $50-200 ក្នុងខែ</li>
                         </ul>
                         <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
                     </div>
@@ -909,10 +977,10 @@
                     </div>
                     <div class="feature-details">
                         <ul class="feature-benefits">
-                            <li>✅ វាយតម្លៃ 3 ប្រព័ន្ធសំខាន់ៗ</li>
-                            <li>✅ Tracking, Budgeting, Saving systems</li>
-                            <li>✅ កំណត់ចំណុចខ្លាំង និងចំណុចខ្វះខាត</li>
-                            <li>✅ ទទួលបាន readiness score</li>
+                            <li>✅ វាយតម្លៃប្រព័ន្ធ ៣ យ៉ាង</li>
+                            <li>✅ ពិនិត្យការតាមដាន និងសន្សំ</li>
+                            <li>✅ កំណត់ចំណុចខ្លាំងនិងខ្វះ</li>
+                            <li>✅ ទទួលបានពិន្ទុត្រៀមភាព</li>
                             <li>✅ ផែនការកែលម្អជាក់ស្តែង</li>
                         </ul>
                         <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
@@ -931,11 +999,11 @@
                     </div>
                     <div class="feature-details">
                         <ul class="feature-benefits">
-                            <li>✅ ចាត់ចំណូលទាំង 3 ប្រភេទ</li>
-                            <li>✅ វិភាគចំណាយ Fixed vs Variable</li>
-                            <li>✅ បង្កើត Income & Cost Map</li>
-                            <li>✅ គណនាអាទិភាព និងភាគរយ</li>
-                            <li>✅ ផែនទីពេញលេញសម្រាប់ការសម្រេចចិត្ត</li>
+                            <li>✅ ចាត់ថ្នាក់ចំណូល ៣ ប្រភេទ</li>
+                            <li>✅ វិភាគចំណាយថេរនិងប្រែប្រួល</li>
+                            <li>✅ បង្កើតផែនទីចំណូលចំណាយ</li>
+                            <li>✅ គណនាអាទិភាពនិងភាគរយ</li>
+                            <li>✅ ផែនទីពេញលេញសម្រាប់សម្រេច</li>
                         </ul>
                         <div class="feature-time">⏱️ រយៈពេល: ២០-២៥ នាទី</div>
                     </div>
@@ -953,8 +1021,8 @@
                     </div>
                     <div class="feature-details">
                         <ul class="feature-benefits">
-                            <li>✅ ចាត់ចំណាយទៅ 3 ក្រុម</li>
-                            <li>✅ Survival, Growth, Lifestyle spending</li>
+                            <li>✅ ចាត់ចំណាយទៅ ៣ ក្រុម</li>
+                            <li>✅ បែងចែករស់រានមាន និងលូតលាស់</li>
                             <li>✅ រៀបចំអាទិភាពត្រឹមត្រូវ</li>
                             <li>✅ ធ្វើតុល្យភាពបានល្អ</li>
                             <li>✅ ផែនការសម្រាប់ការលូតលាស់</li>
@@ -975,10 +1043,10 @@
                     </div>
                     <div class="feature-details">
                         <ul class="feature-benefits">
-                            <li>✅ Stop/Start/Continue framework</li>
-                            <li>✅ កំណត់ 2-3 សកម្មភាពសំខាន់</li>
-                            <li>✅ ផែនការ 30 ថ្ងៃអនុវត្ត</li>
-                            <li>✅ ការត្រៀមរៀបចំសម្រាប់ជោគជ័យ</li>
+                            <li>✅ ប្រើគំរូ បញ្ឈប់/ចាប់ផ្តើម/បន្ត</li>
+                            <li>✅ កំណត់សកម្មភាព ២-៣ យ៉ាង</li>
+                            <li>✅ ផែនការអនុវត្ត ៣០ ថ្ងៃ</li>
+                            <li>✅ ត្រៀមរៀបចំសម្រាប់ជោគជ័យ</li>
                             <li>✅ តាមដានលទ្ធផលជាក់ស្តែង</li>
                         </ul>
                         <div class="feature-time">⏱️ រយៈពេល: ២០-២៥ នាទី</div>
@@ -997,11 +1065,11 @@
                     </div>
                     <div class="feature-details">
                         <ul class="feature-benefits">
-                            <li>✅ Celebrate, Build Habits, Continue Growing</li>
+                            <li>✅ អបអរ បង្កើតទម្លាប់ បន្តលូតលាស់</li>
                             <li>✅ រៀបចំទម្លាប់រយៈពេលវែង</li>
-                            <li>✅ ការត្រៀមរៀបចំសម្រាប់ដំណាក់កាលបន្ទាប់</li>
+                            <li>✅ ត្រៀមរៀបចំដំណាក់កាលបន្ទាប់</li>
                             <li>✅ រួមបញ្ចូលចំណេះដឹងទាំងអស់</li>
-                            <li>✅ ការបន្តដំណើរផ្លាស់ប្តូរ</li>
+                            <li>✅ បន្តដំណើរផ្លាស់ប្តូរ</li>
                         </ul>
                         <div class="feature-time">⏱️ រយៈពេល: ១៥-២០ នាទី</div>
                     </div>
@@ -1019,11 +1087,11 @@
                     </div>
                     <div class="feature-details">
                         <ul class="feature-benefits">
-                            <li>✅ Private Capital Strategy Session</li>
-                            <li>✅ Capital Flow & Structure Analysis</li>
-                            <li>✅ LP (Investor) Readiness Assessment</li>
-                            <li>✅ Professional Network Access</li>
-                            <li>✅ Advanced Capital Deployment Plans</li>
+                            <li>✅ ពិគ្រោះយោបល់មូលធនឯកជន</li>
+                            <li>✅ វិភាគរចនាសម្ព័ន្ធមូលធន</li>
+                            <li>✅ វាយតម្លៃត្រៀមភាពវិនិយោគិន</li>
+                            <li>✅ ចូលដំណើរការបណ្តាញវិជ្ជាជន</li>
+                            <li>✅ ផែនការដាក់ប្រាក់កម្រិតខ្ពស់</li>
                         </ul>
                         <div class="feature-time">⏱️ រយៈពេល: ៩០ នាទី | តម្លៃ: $197</div>
                     </div>
@@ -1079,9 +1147,10 @@
             <h2 class="section-title">💰 ជ្រើសរើសកម្មវិធីសម្រាប់អ្នក</h2>
             <div class="pricing-grid">
                 <div class="pricing-card scroll-animate">
+                    <div class="guarantee-badge">30-Day Guarantee</div>
                     <h3>Essential Program</h3>
                     <div class="price">$47</div>
-                    <p class="price-subtitle">(២៨២,០០០ រៀល)</p>
+                    <p class="price-subtitle">(១៩០,៣៥០ រៀល)</p>
                     <ul class="features-list">
                         <li>សារទាំង ៧ ថ្ងៃ</li>
                         <li>Templates & Worksheets</li>
@@ -1094,23 +1163,26 @@
 
                 <div class="pricing-card popular scroll-animate">
                     <div class="popular-badge">🌟 Popular Choice</div>
+                    <div class="guarantee-badge">30-Day Guarantee</div>
                     <h3>Premium + Support</h3>
                     <div class="price">$97</div>
-                    <p class="price-subtitle">(៥៨១,០០០ រៀល)</p>
+                    <p class="price-subtitle">(៣៩២,៨៥០ រៀល)</p>
                     <ul class="features-list">
                         <li>រួមបញ្ចូល Essential +</li>
                         <li>ការទាក់ទងផ្ទាល់ @Chendasum</li>
                         <li>24/7 support</li>
                         <li>ជំនួយបញ្ហាផ្ទាល់</li>
                         <li>អាទិភាពក្នុងការឆ្លើយ</li>
+                        <li>សម្រង់ប្រាជ្ញាប្រចាំថ្ងៃ</li>
                     </ul>
                     <button class="select-plan" onclick="startProgram()">ជ្រើសរើសកម្មវិធីនេះ</button>
                 </div>
 
                 <div class="pricing-card scroll-animate">
+                    <div class="guarantee-badge">30-Day Guarantee</div>
                     <h3>VIP Capital Strategy</h3>
                     <div class="price">$197</div>
-                    <p class="price-subtitle">(១,១៨៨,០០០ រៀល)</p>
+                    <p class="price-subtitle">(៧៩៧,៨៥០ រៀល)</p>
                     <ul class="features-list">
                         <li>រួមបញ្ចូល Premium +</li>
                         <li>1-on-1 Capital Strategy Session</li>
@@ -1132,26 +1204,23 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card scroll-animate">
                     <p class="testimonial-text">
-                        "កម្មវិធីនេះបានផ្លាស់ប្តូរជីវិតខ្ញុំ! ខ្ញុំរកឃើញ Money Leaks ចំនួន $150/ខែ ហើយឥឡូវខ្ញុំអាចសន្សំបានហើយ។"
+                        "ចាប់ផ្តើមកម្មវិធីនេះ ខ្ញុំស្វែងរកបានកន្លែងដែលលុយលេចច្រើន។ ឥឡូវដឹងគ្រប់គ្រងបានល្អជាង។"
                     </p>
-                    <div class="testimonial-author">- សុភាព, អ្នកប្រកបអាជីវកម្ម</div>
+                    <div class="testimonial-author">- Early Member</div>
                 </div>
                 <div class="testimonial-card scroll-animate">
                     <p class="testimonial-text">
                         "ភាសាខ្មែរ ១០០% ធ្វើឱ្យខ្ញុំយល់បានច្បាស់។ ឥឡូវខ្ញុំមានទំនុកចិត្តក្នុងការគ្រប់គ្រងលុយរបស់ខ្ញុំ។"
                     </p>
-                    <div class="testimonial-author">- ចន្ទរី, បុគ្គលិកក្រុមហ៊ុន</div>
+                    <div class="testimonial-author">- Beta Tester</div>
                 </div>
                 <div class="testimonial-card scroll-animate">
                     <p class="testimonial-text">
-                        "Capital Clarity Session បានជួយខ្ញុំរៀបចំផែនការសម្រាប់ការបង្កើនមូលធនក្រុមហ៊ុន។ វាមានតម្លៃខ្ពស់ណាស់!"
+                        "ត្រឹម 7 ថ្ងៃ ខ្ញុំចេះរៀបចំផែនការហិរញ្ញវត្ថុបាន។ កម្មវិធីនេះងាយយល់ និងមានប្រយោជន៍ខ្ពស់។"
                     </p>
-                    <div class="testimonial-author">- វិចិត្រា, Founder</div>
+                    <div class="testimonial-author">- Program Participant</div>
                 </div>
             </div>
-            <button class="success-stories-btn" onclick="showSuccessModal()">
-                📖 អានរឿងរ៉ាវជោគជ័យបន្ថែម
-            </button>
         </div>
     </section>
 
@@ -1172,7 +1241,7 @@
                     តើចំណាយពេលប៉ុន្មានក្នុងមួយថ្ងៃ?
                 </div>
                 <div class="faq-answer">
-                    គ្រាន់តែ ១៥-២០ នាទីក្នុងមួយថ្ងៃ។ កម្មវិធីត្រូវបានរចនាឡើងសម្រាប់មនុស្សជួបការរបស់បានងាយស្រួល។
+                    គ្រាន់តែ ១៥-២០ នាទីក្នុងមួយថ្ងៃ។ កម្មវិធីត្រូវបានរចនាឡើងសម្រាប់មនុស្សរវល់បានងាយស្រួល។
                 </div>
             </div>
             <div class="faq-item scroll-animate">
@@ -1189,6 +1258,22 @@
                 </div>
                 <div class="faq-answer">
                     សម្រាប់ Founders និង Operators ដែលចង់បង្កើនមូលធន និងរៀបចំប្រព័ន្ធហិរញ្ញវត្ថុកម្រិតខ្ពស់។ តម្រូវឱ្យមានការវាយតម្លៃ និងទទួលយកតែអ្នកមានលក្ខណៈសម្បត្តិគ្រប់គ្រាន់។
+                </div>
+            </div>
+            <div class="faq-item scroll-animate">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    តើអាចទូទាត់តាមវិធីណាខ្លះ?
+                </div>
+                <div class="faq-answer">
+                    យើងទទួលការទូទាត់តាម ABA, ACLEDA, Wing, PayPal, និងកាតឥណទាន។ ការទូទាត់ត្រូវបានធានាសុវត្ថិភាព 100%។
+                </div>
+            </div>
+            <div class="faq-item scroll-animate">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    បើខ្ញុំមិនពេញចិត្ត តើធ្វើម៉េច?
+                </div>
+                <div class="faq-answer">
+                    យើងមានការធានា 30-Day Money Back Guarantee។ បើអ្នកអនុវត្តតាមកម្មវិធីហើយមិនពេញចិត្ត យើងនឹងផ្ញើលុយមកវិញពេញ 100%។
                 </div>
             </div>
         </div>
@@ -1210,9 +1295,9 @@
                 </div>
                 <div class="footer-section">
                     <h3>កម្មវិធី</h3>
-                    <p>Essential Program - $47</p>
-                    <p>Premium + Support - $97</p>
-                    <p>VIP Capital Strategy - $197</p>
+                    <p>Essential Program - $47 (១៩០,៣៥០ រៀល)</p>
+                    <p>Premium + Support - $97 (៣៩២,៨៥០ រៀល)</p>
+                    <p>VIP Capital Strategy - $197 (៧៩៧,៨៥០ រៀល)</p>
                     <p>Capital Clarity Sessions - $197</p>
                 </div>
                 <div class="footer-section">
@@ -1228,53 +1313,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Success Modal -->
-    <div id="success-modal">
-        <div class="modal-overlay" onclick="closeModal()">
-            <div class="modal-content" onclick="event.stopPropagation()">
-                <span class="modal-close" onclick="closeModal()">&times;</span>
-                <h2>🎉 Success Stories</h2>
-                <div class="success-story">
-                    <div class="story-header">
-                        <div class="story-avatar">👨‍💼</div>
-                        <div class="story-info">
-                            <h3>លោក សុភាព</h3>
-                            <p>អ្នកប្រកបអាជីវកម្ម • Phnom Penh</p>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        <h4>បញ្ហាមុនពេលចូលរួម:</h4>
-                        <p>• ចំណាយលុយច្រើនពេកដោយមិនដឹងខ្លួន<br>
-                        • មិនអាចសន្សំបាន<br>
-                        • គ្មានផែនការហិរញ្ញវត្ថុច្បាស់លាស់</p>
-                        
-                        <h4>លទ្ធផលបន្ទាប់ពី 7 ថ្ងៃ:</h4>
-                        <p>• រកឃើញ Money Leaks $150/ខែ<br>
-                        • បង្កើតប្រព័ន្ធសន្សំបានល្អ<br>
-                        • មានទំនុកចិត្តក្នុងការគ្រប់គ្រងលុយ</p>
-                        
-                        <div class="story-highlight">
-                            💰 "ត្រឹមតែ 7 ថ្ងៃ ខ្ញុំអាចសន្សំបាន $150/ខែ! ឥឡូវខ្ញុំមានផែនការច្បាស់សម្រាប់អនាគត។"
-                        </div>
-                    </div>
-                </div>
-                <button onclick="startProgram()" class="modal-cta">
-                    🚀 ចាប់ផ្តើមដំណើររបស់អ្នក
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Progress Indicator -->
-    <div id="progress-indicator">
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
-            <div class="progress-text">ការផ្លាស់ប្តូរជីវិតរបស់អ្នក: <span id="progress-percent">0%</span></div>
-        </div>
-    </div>
 
     <!-- Floating Telegram Button -->
     <div class="floating-container">
@@ -1297,14 +1335,6 @@
             
             // Toggle current card
             card.classList.toggle('expanded');
-            
-            // Track interaction
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'feature_expand', {
-                    'event_category': 'Engagement',
-                    'event_label': card.querySelector('.feature-title').textContent
-                });
-            }
         }
 
         // FAQ Toggle functionality
@@ -1325,15 +1355,6 @@
 
         // Start Program function
         function startProgram() {
-            // Track conversion
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'click', {
-                    'event_category': 'CTA',
-                    'event_label': 'Start Program'
-                });
-            }
-            
-            // Redirect to Telegram bot
             window.open('https://t.me/SmartMoneyResetBot', '_blank');
         }
 
@@ -1349,86 +1370,6 @@
             
             document.getElementById('monthly-savings').textContent = `${monthlySavings.toFixed(0)}`;
             document.getElementById('yearly-savings').textContent = `${yearlySavings.toFixed(0)}`;
-        }
-
-        // Success modal functions
-        function showSuccessModal() {
-            document.getElementById('success-modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('success-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Enhanced testimonial carousel
-        let testimonialIndex = 0;
-        const testimonials = [
-            {
-                text: "កម្មវិធីនេះបានផ្លាស់ប្តូរជីវិតខ្ញុំ! ខ្ញុំរកឃើញ Money Leaks ចំនួន $150/ខែ ហើយឥឡូវខ្ញុំអាចសន្សំបានហើយ។",
-                author: "សុភាព, អ្នកប្រកបអាជីវកម្ម"
-            },
-            {
-                text: "ភាសាខ្មែរ ១០០% ធ្វើឱ្យខ្ញុំយល់បានច្បាស់។ ឥឡូវខ្ញុំមានទំនុកចិត្តក្នុងការគ្រប់គ្រងលុយរបស់ខ្ញុំ។",
-                author: "ចន្ទរី, បុគ្គលិកក្រុមហ៊ុន"
-            },
-            {
-                text: "Capital Clarity Session បានជួយខ្ញុំរៀបចំផែនការសម្រាប់ការបង្កើនមូលធនក្រុមហ៊ុន។ វាមានតម្លៃខ្ពស់ណាស់!",
-                author: "វិចិត្រា, Founder"
-            },
-            {
-                text: "ត្រឹមតែ 7 ថ្ងៃ ខ្ញុំស្វែងរកបាន money leaks $80/ខែ។ គ្រាន់តែកាត់ subscription មិនប្រើ!",
-                author: "ដារ៉ា, និស្សិត"
-            },
-            {
-                text: "VIP Capital Strategy បានជួយខ្ញុំត្រៀមខ្លួនសម្រាប់ការស្វែងរកវិនិយោគិន។ ឥឡូវខ្ញុំទទួលបានការគាំទ្រ!",
-                author: "សុវណ្ណ, Tech Startup"
-            }
-        ];
-
-        function rotateTestimonial() {
-            const testimonialCards = document.querySelectorAll('.testimonial-card');
-            if (testimonialCards.length === 0) return;
-            
-            testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-            
-            testimonialCards.forEach((card, index) => {
-                const testimonial = testimonials[(testimonialIndex + index) % testimonials.length];
-                const textElement = card.querySelector('.testimonial-text');
-                const authorElement = card.querySelector('.testimonial-author');
-                
-                if (textElement && authorElement) {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.9)';
-                    
-                    setTimeout(() => {
-                        textElement.textContent = testimonial.text;
-                        authorElement.textContent = `- ${testimonial.author}`;
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 300);
-                }
-            });
-        }
-
-        // Update progress based on scroll
-        function updateProgress() {
-            const progress = document.getElementById('progress-indicator');
-            const progressFill = document.querySelector('.progress-fill');
-            const progressPercent = document.getElementById('progress-percent');
-            
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            
-            if (scrollTop > 200) {
-                progress.style.display = 'block';
-                progressFill.style.width = scrollPercent + '%';
-                progressPercent.textContent = Math.round(scrollPercent) + '%';
-            } else {
-                progress.style.display = 'none';
-            }
         }
 
         // Scroll animations
@@ -1473,90 +1414,12 @@
             // Initial calculation
             updateCalculator();
             
-            // Start testimonial rotation
-            setInterval(rotateTestimonial, 5000);
-            
             // Initialize scroll animations
             handleScrollAnimations();
-            
-            // Add loading complete class
-            document.body.classList.add('loaded');
         });
 
         // Add scroll event listeners
-        window.addEventListener('scroll', function() {
-            updateProgress();
-            handleScrollAnimations();
-        });
-
-        // Add conversion tracking
-        function trackConversion(action, value) {
-            // Google Analytics 4
-            if (typeof gtag !== 'undefined') {
-                gtag('event', action, {
-                    'event_category': 'Conversion',
-                    'event_label': value,
-                    'value': value
-                });
-            }
-            
-            // Facebook Pixel
-            if (typeof fbq !== 'undefined') {
-                fbq('track', action, {value: value, currency: 'USD'});
-            }
-        }
-
-        // Enhanced CTA button with conversion tracking
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.cta-button, .select-plan, .calculator-cta, .modal-cta').forEach(button => {
-                button.addEventListener('click', function() {
-                    const planType = this.closest('.pricing-card')?.querySelector('h3')?.textContent || 'CTA Click';
-                    trackConversion('InitiateCheckout', planType);
-                });
-            });
-        });
-
-        // Add structured data for SEO
-        const structuredData = {
-            "@context": "https://schema.org",
-            "@type": "Course",
-            "name": "7-Day Money Flow Reset™",
-            "description": "កម្មវិធីគ្រប់គ្រងហិរញ្ញវត្ថុជាភាសាខ្មែរ ១០០% សម្រាប់ការផ្លាស់ប្តូរជីវិតហិរញ្ញវត្ថុក្នុងរយៈពេល ៧ ថ្ងៃ",
-            "provider": {
-                "@type": "Organization",
-                "name": "7-Day Money Flow Reset™",
-                "url": "https://7daymoneyflow.com"
-            },
-            "offers": [
-                {
-                    "@type": "Offer",
-                    "name": "Essential Program",
-                    "price": "47",
-                    "priceCurrency": "USD"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Premium + Support",
-                    "price": "97",
-                    "priceCurrency": "USD"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "VIP Capital Strategy",
-                    "price": "197",
-                    "priceCurrency": "USD"
-                }
-            ],
-            "courseMode": "online",
-            "educationalLevel": "beginner",
-            "inLanguage": ["km", "en"],
-            "timeRequired": "P7D"
-        };
-
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.textContent = JSON.stringify(structuredData);
-        document.head.appendChild(script);
+        window.addEventListener('scroll', handleScrollAnimations);
     </script>
 </body>
 </html>
